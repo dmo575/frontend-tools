@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* The defines how to place the navbar elements (logo and buttons), also gives some horizontal padding to them. */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+    padding: 0 2rem;
+}
+
+.buttons-div {
+}
+
+.logo-div {
+    display: flex;
+    padding: 0.2rem 0;
+}
+
+.navbar-button {
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: 0 5px;
+}
+
+.navbar-button:hover {
+    border: 1px solid black;
+}
+
+.navbar-logo {
+    height: auto;
+}
