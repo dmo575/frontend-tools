@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-/* The defines how to place the navbar elements (logo and buttons), also gives some horizontal padding to them. */
+/* navbar ------------------------------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -12,6 +12,8 @@
 }
 
 .buttons-div {
+    display: flex;
+    align-items: center;
 }
 
 .logo-div {
@@ -19,17 +21,57 @@
     padding: 0.2rem 0;
 }
 
-.navbar-button {
-    height: 100%;
-    background-color: transparent;
-    border: 1px solid transparent;
-    margin: 0 5px;
+.navbar-logo {
+    height: auto;
 }
 
+
+/* buttons ------------------------------------------------ */
+
+
+.button-container {
+    position: relative;
+}
+/* show dropdown on hover for PC */
+.button-container:hover > .dropdown {
+    display: block;
+}
+/* show dropmenu on click for touch */
+.button-container:active > .dropdown {
+    display: block;
+}
+
+
+.navbar-button {
+    height: 1.5rem;
+    background-color: white;
+    border: 1px solid transparent;
+    margin: 0 .5rem;
+}
 .navbar-button:hover {
     border: 1px solid black;
 }
 
-.navbar-logo {
-    height: auto;
+.dropdown {
+    /* set up */
+    position: absolute;
+    display: none;
+
+    /* style */
+    background-color: green;
+}
+
+.dropdown-pos-bottom-left {
+    top: calc(1.5rem - 1px);/* navbar-button height - navbar-button border thickness*/
+    right: -1px; /* navbar-button border thikness */
+}
+
+.dropdown-pos-left {
+    top: 0;
+    left: -100%;
+}
+
+.dropdown-pos-right {
+    top: 0;
+    left: 100%;
 }
