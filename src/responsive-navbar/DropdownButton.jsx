@@ -14,7 +14,7 @@ function DropdownButton({title, children, dropdownClass, zIndex, customStyles}) 
 
     return(
         <div className="button-container">
-            <button className={`navbar-button ${customStyles}`}><img src={children?.length > 0 ? folderIcon : anchorIcon } alt="" />{title}</button>
+            <button className={`navbar-button ${customStyles}`}><img className="navbar-button-img" src={children?.length > 0 ? folderIcon : anchorIcon } alt="" />{title}</button>
             {
                 children?.length > 0 && (
                 <div className={`dropdown ${dropdownClass}`} style={{zIndex: zIndex}}>

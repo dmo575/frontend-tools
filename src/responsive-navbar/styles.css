@@ -66,6 +66,10 @@
     border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
+.navbar-button-img {
+    padding-top: 0.1rem;
+}
+
 .dropdown {
     /* set up */
     position: absolute;
@@ -94,7 +98,9 @@
     left: calc(100% + 0.5rem);
 }
 
-/* these styles must be placed last */
+
+/* these styles must be placed last as
+   they are override styles */
 .test {
     background-color: cyan;
 }
