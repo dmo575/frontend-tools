@@ -8,14 +8,12 @@ import Navbar from './responsive-navbar/Navbar'
 
 const  child1a = {title: "Child1_A", href: "www.google.com", target: "_blank"};
 const  child1b = {title: "Child1_B", href: "www.youtube.com", target: "_blank"};
-
 const  child1a1 = {title: "Child1_A1", href: "www.google.com", target: "_blank"};
 const  child1a2 = {title: "Child1_A2", href: "www.google.com", target: "_blank"};
 const  child1a3 = {title: "Child1_A3", href: "www.google.com", target: "_blank"};
 const  child1a4 = {title: "Child1_A4", href: "www.google.com", target: "_blank"};
 const  child1a5 = {title: "Child1_A5", children: [child1a, child1a1, child1a2,child1a3,child1a4]};
-
-const  child1c = {title: "Child1_C", children: [child1a, child1a1, child1a2, child1a3, child1a4, child1a5]};
+const  child1c = {title: "Child1_C", children: [child1a, child1a5, child1a1, child1a2, child1a3, child1a4]};
 
 
 // dropdown modes:
@@ -31,9 +29,9 @@ const  child1c = {title: "Child1_C", children: [child1a, child1a1, child1a2, chi
 
 // navbar data
 const buttons = [
-    {title: "Button 1", children: [child1a, child1b, child1c], mode_default: "left", align_default: "center", mode_sm: "left", align_sm: "center"},
-    {title: "Button 2", href: "www.google.com", target: "_blank"},
-    {title: "Button 3", href: "www.youtube.com", target: "_blank"},
+    {title: "Button1", children: [child1a, child1c, child1b], mode_default: "left", align_default: "center", mode_sm: "left", align_sm: "center"},
+    {title: "Button2", href: "www.google.com", target: "_blank"},
+    {title: "Button3", href: "www.youtube.com", target: "_blank"},
 ];
 
 /**

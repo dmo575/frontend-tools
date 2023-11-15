@@ -13,7 +13,8 @@
 
 .buttons-div {
     display: flex;
-    align-items: center;
+    align-items: end;
+    gap: 1rem;
 }
 
 .logo-div {
@@ -26,11 +27,12 @@
 }
 
 
-/* buttons ------------------------------------------------ */
+/* dropdown STAIRS ------------------------------------------------ */
 
 
 .button-container {
     position: relative;
+    border-radius: .75rem;
 }
 /* show dropdown on hover for PC */
 .button-container:hover > .dropdown {
@@ -40,16 +42,28 @@
 .button-container:active > .dropdown {
     display: block;
 }
+/* highlights dropdown parent button being interacted with */
+.button-container:active {
+    background-color: rgb(219, 219, 219);
+}
+.button-container:hover {
+    background-color: rgb(219, 219, 219);
+}
 
 
 .navbar-button {
-    height: 1.5rem;
-    background-color: white;
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border: 1px solid transparent;
-    margin: 0 .5rem;
+    background-color: transparent;
+    border-radius: .75rem;
 }
 .navbar-button:hover {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
 .dropdown {
@@ -58,20 +72,35 @@
     display: none;
 
     /* style */
-    background-color: green;
+    background-color: white;
+    box-shadow: 1px 1px 2px 1px grey;
+    border-radius: .75rem;
+    min-width: 5rem;
+    padding: 0.25rem;
 }
 
 .dropdown-pos-bottom-left {
-    top: calc(1.5rem - 1px);/* navbar-button height - navbar-button border thickness*/
+    top: calc(2rem - 0px);/* navbar-button height - navbar-button border thickness*/
     right: -1px; /* navbar-button border thikness */
 }
 
 .dropdown-pos-left {
     top: 0;
-    left: -100%;
+    left: calc(-100% - 0.5rem);
 }
 
 .dropdown-pos-right {
     top: 0;
-    left: 100%;
+    left: calc(100% + 0.5rem);
+}
+
+/* these styles must be placed last */
+.test {
+    background-color: cyan;
+}
+.test2 {
+    background-color: gray;
+}
+.test3 {
+    background-color: yellowgreen;
 }

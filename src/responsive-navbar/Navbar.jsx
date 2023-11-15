@@ -9,35 +9,30 @@ function Navbar({buttons, logo, menuButtonLogo}) {
 
     const currBp = useContext(BreakpointContext);
 
-    /**
-     * TODO:
-     * 
-     * Have the func take as children all the buttons, and as an argument the mobile menu button that is to encapsule the children
-     * if we go mobile.
-     * 
-     */
 
-
-    const spawnButtons = (root, dropdownLevel=0) => {
+    // levelStyles contains an array of styles, each index should define the styles to be applied
+    // to buttons at that nesting level (0 means head/heads, 1 means first gen children, 2 second
+    // gen children, etc...)
+    const spawnButtons_stairs = (root, dropdownLevel=0, levelStyles=["", "test", "test2", "test3"]) => {
 
         if(!root) return null;
 
+        // depending on the nesting level, we assign a different position 
+        // and z-index to this element's dropdown
         let dropdownClass;
-
         if(dropdownLevel == 0) {
             dropdownClass = "dropdown-pos-bottom-left";
         }
         else if(dropdownLevel % 2 == 0) {
-            dropdownClass = "dropdown-pos-right";
+            dropdownClass = "dropdown-pos-left";// change left to right to make it a downwards zig-zag stairs
         }
         else {
             dropdownClass = "dropdown-pos-left";
         }
 
-
         // this makes this function compatible with headless graphs
         if(root.length > 1) {
-            return root.map(el => spawnButtons(el, dropdownLevel));
+            return root.map(el => spawnButtons_stairs(el, dropdownLevel));
         }
 
         // used to store children
@@ -49,28 +44,26 @@ function Navbar({buttons, logo, menuButtonLogo}) {
             // does that child has children ?
             if(root.children[i].children) {
                 // recursively call spawnButtons on child and add its return to array
-                childButtons.push(spawnButtons(root.children[i], dropdownLevel+1));
+                childButtons.push(spawnButtons_stairs(root.children[i], dropdownLevel+1));
             }
             // child does NOT has any children (this means it's an anchor)
             else {
                 // add childless button to array
-                childButtons.push( <DropdownButton key={`${root.children[i].title}-${dropdownLevel}`} title={root.children[i].title} dropdownClass={dropdownClass}/> );
+                childButtons.push( <DropdownButton key={`${root.children[i].title}-${dropdownLevel}`} title={root.children[i].title} dropdownClass={dropdownClass} zIndex={dropdownLevel} customStyles={levelStyles[dropdownLevel+1]}/> );
             }
         }
 
         // return root button
         return(
-            <DropdownButton key={`${root.title}-${dropdownLevel}`} title={root.title} dropdownClass={dropdownClass}>
+            <DropdownButton key={`${root.title}-${dropdownLevel}`} title={root.title} dropdownClass={dropdownClass} zIndex={dropdownLevel} customStyles={levelStyles[dropdownLevel]}>
                 {childButtons.map(el => el)}
             </DropdownButton>
         );
     };
 
-    const spawnButtonsOnMenu = (btns) => {
+    const spawnButtons_slide = (btns) => {
 
         if(!btns) return null;
-
-        // TODO: return a dropdown button with the buttons as the items.
         return(
             <>
             This is mobile now
@@ -84,15 +77,11 @@ function Navbar({buttons, logo, menuButtonLogo}) {
                 <img className="navbar-logo" src={logo} alt="logo image"/>
             </div>
             <div className="buttons-div">
-                {/* if mobile: renders the menu button with items as children - else: renders children */}
-                { currBp > bp.xs ? spawnButtons(buttons) : spawnButtonsOnMenu(buttons)}
+                { currBp > bp.xs ? spawnButtons_stairs(buttons) : spawnButtons_slide(buttons)}
             </div>
         </div>
     );
 }
 
-/*
-spawnDropdown(buttons)
- */
 
 export default Navbar;
