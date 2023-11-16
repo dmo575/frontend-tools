@@ -101,7 +101,7 @@ function Navbar({buttons=[root_folder1, root_folder2], logo, menuButtonLogo}) {
 
         // The first dropdown should appear below to the left of the parent, the other ones at the left of the parent
         // as described in the css classes.
-        let dropdownClass = _currLevel == 0 ? "dropdown-pos-bottom-left" : "dropdown-pos-left";
+        let dropdownPos = _currLevel == 0 ? "dropdown-pos-bottom-left" : "dropdown-pos-left";
 
         // is the root is headless, return an array
         if(root.length > 1) {
@@ -125,7 +125,7 @@ function Navbar({buttons=[root_folder1, root_folder2], logo, menuButtonLogo}) {
                 childButtons.push( <DropdownButton 
                     key={`${root.children[i].title}-${_currLevel}`} 
                     title={root.children[i].title} 
-                    dropdownPosClass={dropdownClass} 
+                    dropdownPos={dropdownPos} 
                     zIndex={zIndexStart + _currLevel} 
                     customStyles={levelStyles[_currLevel]}/> 
                 );
@@ -137,7 +137,7 @@ function Navbar({buttons=[root_folder1, root_folder2], logo, menuButtonLogo}) {
             <DropdownButton 
             key={`${root.title}-${_currLevel}`} 
             title={root.title} 
-            dropdownPosClass={dropdownClass} 
+            dropdownPos={dropdownPos} 
             zIndex={zIndexStart + _currLevel} 
             customStyles={levelStyles[_currLevel]}>
                 {childButtons.map(el => el)}

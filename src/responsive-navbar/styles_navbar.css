@@ -28,23 +28,27 @@
 
 /* DropdownButton - Default styling */
 
-.dd-item-cont {
+.dd-item-cont-hover, 
+.dd-item-cont-click {
     position: relative;
     border-radius: .75rem;
 }
+
 /* show dropdown on hover for PC */
-.dd-item-cont:hover > .dropdown {
+.dd-item-cont-hover:hover > .dropdown, 
+.dd-item-cont-click-enabled > .dropdown {
     display: block;
 }
 /* show dropmenu on click for touch */
-.dd-item-cont:active > .dropdown {
+.dd-item-cont-hover:active > .dropdown {
     display: block;
 }
 /* highlights dropdown parent button being interacted with */
-.dd-item-cont:active {
+.dd-item-cont-hover:active {
     background-color: rgb(219, 219, 219);
 }
-.dd-item-cont:hover {
+.dd-item-cont-hover:hover,
+.dd-item-cont-click:hover {
     background-color: rgb(219, 219, 219);
 }
 
@@ -68,6 +72,9 @@
     padding-top: 0.1rem;
 }
 
+.dd-button-img {
+    pointer-events: none;
+}
 
 .dropdown {
     /* set up */
@@ -81,6 +88,10 @@
     min-width: 5rem;
     padding: 0.25rem;
 }
+.dropdown:hover {
+    display: block;
+}
+
 .dropdown-pos-bottom-left {
     top: calc(2rem - 0px);/* dd-button height - dd-button border thickness*/
     right: -1px; /* dd-button border thikness */
