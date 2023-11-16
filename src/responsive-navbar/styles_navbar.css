@@ -3,72 +3,71 @@
     padding: 0;
 }
 
-/* navbar ------------------------------------------------- */
-.navbar {
+/* Default styling for the navbar */
+
+/* Navbar component - Default styling */
+.navbar-cont {
     display: flex;
     justify-content: space-between;
     background-color: grey;
     padding: 0 2rem;
 }
-
-.buttons-div {
+.navbar-logo-cont {
+    display: flex;
+    padding: 0.2rem 0;
+}
+.navbar-logo {
+    height: auto;
+}
+.navbar-buttons-cont {
     display: flex;
     align-items: end;
     gap: 1rem;
 }
 
-.logo-div {
-    display: flex;
-    padding: 0.2rem 0;
-}
 
-.navbar-logo {
-    height: auto;
-}
+/* DropdownButton - Default styling */
 
-
-/* dropdown STAIRS ------------------------------------------------ */
-
-
-.button-container {
+.dd-item-cont {
     position: relative;
     border-radius: .75rem;
 }
 /* show dropdown on hover for PC */
-.button-container:hover > .dropdown {
+.dd-item-cont:hover > .dropdown {
     display: block;
 }
 /* show dropmenu on click for touch */
-.button-container:active > .dropdown {
+.dd-item-cont:active > .dropdown {
     display: block;
 }
 /* highlights dropdown parent button being interacted with */
-.button-container:active {
+.dd-item-cont:active {
     background-color: rgb(219, 219, 219);
 }
-.button-container:hover {
+.dd-item-cont:hover {
     background-color: rgb(219, 219, 219);
 }
 
-
-.navbar-button {
+.dd-button {
     height: 2rem;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    white-space: nowrap;
 
     border: 1px solid transparent;
     background-color: transparent;
     border-radius: .75rem;
 }
-.navbar-button:hover {
+.dd-button:hover {
     border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
-.navbar-button-img {
+.dd-button-img {
     padding-top: 0.1rem;
 }
+
 
 .dropdown {
     /* set up */
@@ -82,31 +81,29 @@
     min-width: 5rem;
     padding: 0.25rem;
 }
-
 .dropdown-pos-bottom-left {
-    top: calc(2rem - 0px);/* navbar-button height - navbar-button border thickness*/
-    right: -1px; /* navbar-button border thikness */
+    top: calc(2rem - 0px);/* dd-button height - dd-button border thickness*/
+    right: -1px; /* dd-button border thikness */
 }
-
 .dropdown-pos-left {
     top: 0;
-    left: calc(-100% - 0.5rem);
-}
-
-.dropdown-pos-right {
-    top: 0;
-    left: calc(100% + 0.5rem);
+    right: 100%;
 }
 
 
-/* these styles must be placed last as
-   they are override styles */
-.test {
-    background-color: cyan;
+/* add here any style that is meant to override the default styles */
+
+.test:hover {
+    background-color: lightgreen;
 }
-.test2 {
-    background-color: gray;
+.test2:hover {
+    background-color: lightskyblue;
+    border-radius: 0;
 }
-.test3 {
-    background-color: yellowgreen;
+.test22 {
+    background-color: lightskyblue;
+    border-radius: 0;
+}
+.test3:hover {
+    background-color: lightcoral;
 }
