@@ -1,0 +1,101 @@
+/* DropdownButton - Default styling */
+
+.dd-item-cont-hover, 
+.dd-item-cont-click {
+    position: relative;
+    border-radius: .75rem;
+}
+
+/* show dropdown on hover for PC */
+.dd-item-cont-hover:hover > .dropdown, 
+.dd-item-cont-click-enabled > .dropdown {
+    display: block;
+}
+/* show dropmenu on click for touch */
+.dd-item-cont-hover:active > .dropdown {
+    display: block;
+}
+/* highlights dropdown parent button being interacted with */
+.dd-item-cont-hover:active {
+    background-color: rgb(219, 219, 219);
+}
+.dd-item-cont-hover:hover,
+.dd-item-cont-click:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.dd-button {
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    white-space: nowrap;
+
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: .75rem;
+}
+.dd-button:hover {
+    border: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.dd-button-img {
+    padding-top: 0.1rem;
+}
+
+.dd-button-img {
+    pointer-events: none;
+}
+
+.dropdown {
+    /* set up */
+    position: absolute;
+    display: none;
+
+    /* style */
+    background-color: white;
+    box-shadow: 1px 1px 2px 1px grey;
+    border-radius: .75rem;
+    min-width: 5rem;
+    padding: 0.25rem;
+}
+.dropdown:hover {
+    display: block;
+}
+
+.dropdown-pos-bottom-left {
+    top: calc(2rem - 0px);/* dd-button height - dd-button border thickness*/
+    right: -1px; /* dd-button border thikness */
+}
+.dropdown-pos-left {
+    top: 0;
+    right: 100%;
+}
+
+
+/* add here any style that is meant to override the default styles */
+
+.test:hover {
+    background-color: lightgreen;
+}
+.test2:hover {
+    background-color: lightskyblue;
+    border-radius: 0;
+}
+.test22 {
+    background-color: lightskyblue;
+    border-radius: 0;
+}
+.test3:hover {
+    background-color: lightcoral;
+}
+
+.test4 {
+    background-color: rgb(79, 115, 156);
+}
+
+/* difference between container and button, the container includes both the
+button and the dropdown, the button is just the button, so you can implement
+styles based on hovering any of the two (btn and dpdown) or just the button
+or just the dropdown by using those */
