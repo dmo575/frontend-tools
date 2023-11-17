@@ -4,6 +4,14 @@
 .dd-item-cont-click {
     position: relative;
     border-radius: .75rem;
+    /* NEW */
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    padding-right: 0.5rem;
+}
+
+.dd-item-cont-hover:hover {
+    border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
 /* show dropdown on hover for PC */
@@ -32,12 +40,9 @@
     align-items: center;
     white-space: nowrap;
 
-    border: 1px solid transparent;
+    /* these eliminate custom styling from the button tag */
+    border: none;
     background-color: transparent;
-    border-radius: .75rem;
-}
-.dd-button:hover {
-    border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
 .dd-button-img {
@@ -76,10 +81,21 @@
 
 /* add here any style that is meant to override the default styles */
 
-.test:hover {
+.multicolor_demo {
+    padding-right: 0.5rem;
+}
+
+.multicolor_demo:hover,
+.multicolor_demo:hover >.multicolor_demo_dd {
     background-color: lightgreen;
 }
-.test2:hover {
+
+.multicolor_demo2:hover,
+.multicolor_demo2:hover >.multicolor_demo2_dd {
+    background-color: lightskyblue;
+}
+
+.tetet:hover {
     background-color: lightskyblue;
     border-radius: 0;
 }

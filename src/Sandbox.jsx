@@ -39,7 +39,7 @@ function Sandbox() {
 
     return(
         <BreakpointContext.Provider value={currBp}>
-        <Navbar buttons={navbar_demo.root} folderMode={"hover"} iconRules={navbar_demo.rules} levelStyles={[]} logo={logo} menuButtonLogo={logo}/>
+        <Navbar buttons={navbar_demo.root} folderMode={"hover"} iconRules={navbar_demo.rules} levelStyles={navbar_demo.multicolor_levelStyles} logo={logo} menuButtonLogo={logo}/>
         </BreakpointContext.Provider>
     );
 }

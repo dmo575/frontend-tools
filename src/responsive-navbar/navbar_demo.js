@@ -11,7 +11,7 @@ export const rules = (button, lvl) => {
     return anchorIcon;
 }
 
-
+// default menu
 const default1 = {
     title: "This is",
 }
@@ -26,7 +26,24 @@ const default3 = {
         window.open("https://www.google.com", "_blank");
     }
 }
+const defaultFolder2 = {
+    title: "Nested folder",
+    children: [default1, default2, default3]
+}
+const defaultFolder = {
+    title: "default",
+    children: [default1, default2, default3, defaultFolder2]
+}
 
+// multi color menu
+export const multicolor_levelStyles = [{
+    container: "multicolor_demo",
+    dropdown: "multicolor_demo_dd"
+},
+{
+    container: "multicolor_demo2",
+    dropdown: "multicolor_demo2_dd"
+}];
 const folder3 = {
     title: "folder3",
     children: []
@@ -36,16 +53,6 @@ const folder2 = {
     title: "folder2",
     children: [],
     customStyles: {container: "", button: "test4", dropdown:""}
-}
-
-
-const defaultFolder2 = {
-    title: "Nested folder",
-    children: [default1, default2, default3]
-}
-const defaultFolder = {
-    title: "default",
-    children: [default1, default2, default3, defaultFolder2]
 }
 
 
